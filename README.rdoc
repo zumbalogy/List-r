@@ -1,0 +1,22 @@
+This is the listr application. r for recursive i guess.
+
+
+splash page to login or sign up.
+
+sign up, and your automatically logged in. 
+
+main page now shows your lists and create new list button.
+(front end extra: give users some settings and they can change default colors)
+
+    create new list
+        title the list, check that its a movie list (which it defauts to)
+        option to import and existing spreadsheet and walk through what you -
+          want the rows/colmns to be? this might be too hard
+
+        procedding, will look like you clicked on existing list
+
+    existing list
+      
+
+
+
