@@ -16,7 +16,49 @@ main page now shows your lists and create new list button.
         procedding, will look like you clicked on existing list
 
     existing list
-      
+      show the list in spreadsheet like fashion. if i can do auto loading scrolling, major win
+        --that might be a JS thing
+        --more on the look of this later.
+
+      marking a movie as watched will put it on a sibling, identical, watched list 
+        - (which you can put back if needed)
+
+      can star movies seen, can mark ones for priority have not seen
+
+      addind list item:
+          what that looks like and stuff
+
+
+
+
+what list page looks like:
+    maybe you can edit it just by clicking it, like each row is secretly a form
+      (submitting might bring you to the top of the page though unless JS)
+
+
+    
+
+
+
+models and relations:
+    model stuff
+
+
+thoughts on routing?:
+    if any
+
+
+thoughts on API
+    kinda included in adding list item. maybe other places could be
+
+
+extra/future features:
+    1 - analytics on your list
+    2 - importing and exporting to google or othewise spreadsheets
+
+
+
+
 
 
 
