@@ -76,7 +76,7 @@ models and relations:
       Where can get
       Reccomended by
       year
-      language/cointry
+      language/country
       genre
       rating
       priority
