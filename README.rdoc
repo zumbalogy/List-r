@@ -1,3 +1,8 @@
+#List-r
+
+***"Make lists. This thing is good at making those lists be for movies you want to watch"***
+
+
 This is the listr application. r for recursive i guess.
 
 
@@ -95,7 +100,10 @@ thoughts on API
 extra/future features:
     1 - analytics on your list
     2 - importing and exporting to google or othewise spreadsheets
-
+    3 - search by multiple fields
+    4 - random pick option
+    5 - if its on youtube or netflix
+    
 
 
 
