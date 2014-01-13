@@ -41,7 +41,46 @@ what list page looks like:
 
 
 models and relations:
-    model stuff
+    3 models. User, list, row/movie/item. think ill go with item
+
+    User
+      id
+      name
+      password
+      settings?
+
+    List
+      id
+      name
+      User ID
+      timestampS
+      type?
+      settings?
+      which cols to show?
+
+    Item
+      ID
+      List ID
+      Timestamps
+
+      Title
+      Director
+      Where can get
+      Reccomended by
+      year
+      language/cointry
+      genre
+      rating
+      priority
+      notes 1
+      notes 2
+
+      starred
+      watched
+      rating?
+      rewatch
+
+
 
 
 thoughts on routing?:
