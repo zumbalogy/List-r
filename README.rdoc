@@ -34,6 +34,7 @@ main page now shows your lists and create new list button.
 what list page looks like:
     maybe you can edit it just by clicking it, like each row is secretly a form
       (submitting might bring you to the top of the page though unless JS)
+    theme for the whole thing: greys
 
 
     
