@@ -20,14 +20,16 @@ class ListsController < ApplicationController
     end
 
     def fill
-        #fill out autopoped form then submit
+        
         @title = params[:title]
         link_title = @title.gsub(' ','+')
         party = HTTParty.get("http://www.omdbapi.com/?i=&t=#{link_title}")
         hash = JSON.parse(party)
-
+        @hash = hash
         @year = hash['Year']
-       # @
+        @director = hash['Director']
+        @genre = hash['Genre']
+        @language = hash['Language']
 
 
     end
@@ -35,6 +37,25 @@ class ListsController < ApplicationController
     def submit
         #need to catch and save the item
         @list = List.find_by_name(params[:list].gsub('_', ' '))
+
+
+        item = Item.new
+        item.title = params[:title]
+        item.director = params[:director]
+        item.year = params[:year]
+        item.genre = params[:genre]
+        item.language = params[:language]
+        item.title = params[:title]
+        item.list_id = @list.id
+
+        item.notes = params[:notes]
+        item.notes2 = params[:notes2]
+        item.recommended_by = params[:recommended_by]
+        item.where = params[:from]
+        item.save
+
+
+
         redirect_to "/list/#{@list.name.gsub(' ','_')}"
     end
 

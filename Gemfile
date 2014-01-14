@@ -11,7 +11,7 @@ gem 'capybara'
 gem 'rspec-rails'
 require 'json'
 gem 'httparty'
-
+gem 'titleize'
 
 # Gems used only for assets and not required
 # in production environments by default.

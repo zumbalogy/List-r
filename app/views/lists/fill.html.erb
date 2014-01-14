@@ -4,29 +4,32 @@ dont do anything here yet
              method='post' >
 
     <p>Title</p>
-    <input type='text' name='title'>
+    <input type='text' name='title' value="<%= @title.titleize %>">
+
     <p>Director</p>
-    <input type='text' name='director'>
+    <input type='text' name='director' value="<%= @director %>">
+
     <p>Year</p>
-    <input type='text' name='year'>
+    <input type='text' name='year' value=<%= @year %>>
+
     <p>Genre</p>
-    <input type='text' name='genre'>
+    <input type='text' name='genre' value="<%= @genre %>">
+
     <p>Language</p>
-    <input type='text' name='language'>
-    <p>From</p>
+    <input type='text' name='language' value="<%= @language %>">
+
+    <p>From (ie, netflix)</p>
     <input type='text' name='from'>
+
     <p>Reccomended by</p>
     <input type='text' name='reccommended_by'>
 
-<!--     <input type='text' name='name'>
-
-    <input type='text' name='name'>
-
-    <input type='text' name='name'>
-
-    <input type='text' name='name'>
-
-    <input type='text' name='name'> -->
+    <div>
+        <p>Notes</p>
+        <input type='textarea' name='notes'>
+        <p>Notes 2</p>
+        <input type='textarea' name='notes2'>
+    </div>
 
 
     <input name='list_id' type='hidden' value='<%= @list_id %>'>
@@ -43,5 +46,5 @@ dont do anything here yet
     
 </form>
 
-<p><%= @year %> </p>
 
+<p><%= params %></p>

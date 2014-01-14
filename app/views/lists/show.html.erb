@@ -7,15 +7,15 @@
 
 <ol>
     
-<% @list.items.each do |item| %>
+    <% @list.items.each do |item| %>
 
-<li>
-    
-<%= item.name %>
+        <li>
+            
+            <%= item.title %>
 
-</li>
+        </li>
 
-<% end %>
+    <% end %>
 
 
 </ol>
@@ -28,3 +28,7 @@
 <% end %>
 
 this is the show yo
+
+<p>
+<%= params %>
+</p>
