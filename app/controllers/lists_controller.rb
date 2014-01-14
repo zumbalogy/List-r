@@ -12,8 +12,21 @@ class ListsController < ApplicationController
     end
 
     def show
-        @list = List.find_by_name(params[:list_name].gsub('_', ' '))
-
+        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
     end
+
+    def item
+        #enter title, then take you to fill
+    end
+
+    def fill
+        #fill out autopoped form then submit
+    end
+
+    def submit
+        @list = List.find_by_name(params[:list].gsub('_', ' '))
+        redirect_to "/list/#{@list.name.gsub(' ','_')}"
+    end
+
 
 end

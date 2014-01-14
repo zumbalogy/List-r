@@ -1,0 +1,14 @@
+<form method='post' action='/list/<%= params[:list_name].gsub(' ','_') %>/item'>
+
+    <input type='text' name='title' placeholder='title'>
+
+    <input name='user_id' type='hidden' value='<%= current_user.id %>'>
+
+     <input name="authenticity_token" 
+                   type="hidden" 
+                   value="<%= form_authenticity_token %>" />
+    <input type='submit'>
+
+
+    
+</form>

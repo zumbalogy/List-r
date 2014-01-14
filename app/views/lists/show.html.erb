@@ -2,9 +2,23 @@
 
 
 
+<a href="/list/<%= @list.name.gsub(' ','_') %>/item">New Item</a>
 
 
+<ol>
+    
+<% @list.items.each do |item| %>
 
+<li>
+    
+<%= item.name %>
+
+</li>
+
+<% end %>
+
+
+</ol>
 
 
 <p>yoyoyo</p>
@@ -12,3 +26,5 @@
 
 
 <% end %>
+
+this is the show yo

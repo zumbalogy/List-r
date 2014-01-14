@@ -1,0 +1,19 @@
+dont do anything here yet
+
+<form action='/list/<%= params[:list_name] %>/submit'
+             method='post' >
+
+    <input type='text' name='name'>
+
+    <input name='user_id' type='hidden' value='<%= current_user.id %>'>
+
+    <input name='list' type='hidden' value='<%= params[:list_name] %>'>
+
+     <input name="authenticity_token" 
+                   type="hidden" 
+                   value="<%= form_authenticity_token %>" />
+    <input type='submit'>
+
+
+    
+</form>

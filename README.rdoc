@@ -93,11 +93,11 @@ models and relations:
 
 thoughts on routing?:
     / is home
-    /list/:listname is where your list be
-    /new make new list (post here to create and send you to listname)
-    /:listname/item fill in title, post here and sends you to next one:
-    /:listname/item/submit here you will post to the next one
-    /:listname/item/create and that redirects you back to /:listname
+    /list/:list_name is where your list be
+    /new make new list (post here to create and send you to list_name)
+    /list/:list_name/item fill in title, post here and sends you to next one:
+    /list/:list_name/item/submit here you will post to the next one
+    /list/:list_name/item/create and that redirects you back to /list/:list_name
 
 
 
