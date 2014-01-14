@@ -92,7 +92,15 @@ models and relations:
 
 
 thoughts on routing?:
-    if any
+    / is home
+    /:listname is where your list be
+    /new make new list (post here to create and send you to listname)
+    /:listname/item fill in title, post here and sends you to next one:
+    /:listname/item/submit here you will post to the next one
+    /:listname/item/create and that redirects you back to /:listname
+
+
+
 
 
 thoughts on API
@@ -112,3 +120,16 @@ extra/future features:
 
 
 
+add to spec helper to make capybara log in
+
+include Warden::Test::Helpers
+Warden.test_mode!
+login_as(@user)
+
+
+=====
+in spec_helper:
+include Warden::Test::Helpers
+Warden.test_mode!
+in feature spec:
+login_as(@user)

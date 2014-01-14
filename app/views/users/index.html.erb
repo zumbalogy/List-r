@@ -1,2 +1,15 @@
 <h3>Welcome <%= current_user.email %></h3>
 <p>this is the index!!</p>
+
+<a href="/new">New List</a>
+
+
+<ol>
+    <% current_user.lists.each do |foo| %>
+        <li>
+            <a href="/user/lists/<%=foo.name%>">
+                <%= foo.name %>
+            </a>
+        </li>
+    <% end %>
+</ol>

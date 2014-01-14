@@ -3,6 +3,8 @@ Listr::Application.routes.draw do
 
 
   get '/' => 'users#index'
+  get '/new' => 'lists#new'
+  post '/new' => 'lists#create'
 
 end
 
