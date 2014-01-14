@@ -3,13 +3,33 @@ dont do anything here yet
 <form action='/list/<%= params[:list_name] %>/submit'
              method='post' >
 
+    <p>Title</p>
+    <input type='text' name='title'>
+    <p>Director</p>
+    <input type='text' name='director'>
+    <p>Year</p>
+    <input type='text' name='year'>
+    <p>Genre</p>
+    <input type='text' name='genre'>
+    <p>Language</p>
+    <input type='text' name='language'>
+    <p>From</p>
+    <input type='text' name='from'>
+    <p>Reccomended by</p>
+    <input type='text' name='reccommended_by'>
+
+<!--     <input type='text' name='name'>
+
     <input type='text' name='name'>
 
+    <input type='text' name='name'>
+
+    <input type='text' name='name'>
+
+    <input type='text' name='name'> -->
 
 
-
-<!!!!!!!!! rest of stuff here !!!!>
-
+    <input name='list_id' type='hidden' value='<%= @list_id %>'>
     <input name='user_id' type='hidden' value='<%= current_user.id %>'>
 
     <input name='list' type='hidden' value='<%= params[:list_name] %>'>
@@ -22,3 +42,6 @@ dont do anything here yet
 
     
 </form>
+
+<p><%= @year %> </p>
+

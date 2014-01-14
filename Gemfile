@@ -9,6 +9,8 @@ gem 'pg'
 gem 'devise'
 gem 'capybara'
 gem 'rspec-rails'
+require 'json'
+gem 'httparty'
 
 
 # Gems used only for assets and not required

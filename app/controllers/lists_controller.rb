@@ -21,6 +21,15 @@ class ListsController < ApplicationController
 
     def fill
         #fill out autopoped form then submit
+        @title = params[:title]
+        link_title = @title.gsub(' ','+')
+        party = HTTParty.get("http://www.omdbapi.com/?i=&t=#{link_title}")
+        hash = JSON.parse(party)
+
+        @year = hash['Year']
+       # @
+
+
     end
 
     def submit
