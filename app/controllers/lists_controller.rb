@@ -59,5 +59,11 @@ class ListsController < ApplicationController
         redirect_to "/list/#{@list.name.gsub(' ','_')}"
     end
 
+    def kill_item
+        @list = List.find_by_name(params[:list_name].gsub('_',' '))
+        redirect_to "/list/#{@list.name.gsub(' ','_')}"
+    end
+
+
 
 end

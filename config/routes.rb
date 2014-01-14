@@ -12,7 +12,9 @@ Listr::Application.routes.draw do
   devise_scope :user do
     post '/user/delete' => 'devise/sessions#destroy'
   end
+  post '/item/delete' => 'lists#kill_item'
 
+  
 end
 
 
