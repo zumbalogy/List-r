@@ -7,7 +7,7 @@
 <ol>
     <% current_user.lists.each do |foo| %>
         <li>
-            <a href="/user/lists/<%=foo.name%>">
+            <a href="/list/<%=foo.name.gsub(' ','_')%>">
                 <%= foo.name %>
             </a>
         </li>

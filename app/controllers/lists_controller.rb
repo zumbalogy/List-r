@@ -11,4 +11,9 @@ class ListsController < ApplicationController
         redirect_to '/'
     end
 
+    def show
+        @list = List.find_by_name(params[:list_name].gsub('_', ' '))
+
+    end
+
 end

@@ -5,6 +5,7 @@ Listr::Application.routes.draw do
   get '/' => 'users#index'
   get '/new' => 'lists#new'
   post '/new' => 'lists#create'
+  get '/list/:list_name' => 'lists#show'
 
 end
 

@@ -93,7 +93,7 @@ models and relations:
 
 thoughts on routing?:
     / is home
-    /:listname is where your list be
+    /list/:listname is where your list be
     /new make new list (post here to create and send you to listname)
     /:listname/item fill in title, post here and sends you to next one:
     /:listname/item/submit here you will post to the next one
