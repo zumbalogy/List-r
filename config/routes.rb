@@ -9,6 +9,9 @@ Listr::Application.routes.draw do
   get '/list/:list_name/item' => 'lists#item'
   post '/list/:list_name/item' => 'lists#fill'
   post '/list/:list_name/submit' => 'lists#submit'
+  devise_scope :user do
+    post '/user/delete' => 'devise/sessions#destroy'
+  end
 
 end
 

@@ -1,33 +1,34 @@
 <% if current_user.id == @list.user_id %>
 
 
-<div style='display:inline;'>
-<p style='display:inline;'>new item:</p>
-<form style='display:inline;' method='post' action='/list/<%= params[:list_name].gsub(' ','_') %>/item'>
-
-    <input type='text' name='title' placeholder='title'>
-
-
-    <input name='user_id' type='hidden' value='<%= current_user.id %>'>
-
-     <input name="authenticity_token" 
-                   type="hidden" 
-                   value="<%= form_authenticity_token %>" />
-    <input type='submit'>
-
-
+<form method='post' action='/user/delete'>
+    <input type='hidden' name='_methog' value="<%= destroy_user_session_path %>" >
     
+    <button id='submit'>Log out</button>
 </form>
-</div>
-<br/>
-<br/>
-<br/>
 
+
+<div style='display:inline;'>
+    <form style='display:inline;' method='post' action='/list/<%= params[:list_name].gsub(' ','_') %>/item'>
+
+        <input type='text' name='title' placeholder='new item'>
+
+        <input name='user_id' type='hidden' value='<%= current_user.id %>'>
+
+         <input name="authenticity_token" 
+                       type="hidden" 
+                       value="<%= form_authenticity_token %>" />
+        <input type='submit'>
+
+    </form>
+</div>
+
+<br/>
+<br/>
+<br/>
 
 <table>
-    
     <% @list.items.each do |item| %>
-
         <tr>
             <td>
                 <%= item.title %>
@@ -58,13 +59,7 @@
             </td>
 
         </tr>
-
     <% end %>
-
-
 </table>
-
-
-
 
 <% end %>
