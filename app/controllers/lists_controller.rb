@@ -24,6 +24,7 @@ class ListsController < ApplicationController
     end
 
     def submit
+        #need to catch and save the item
         @list = List.find_by_name(params[:list].gsub('_', ' '))
         redirect_to "/list/#{@list.name.gsub(' ','_')}"
     end
