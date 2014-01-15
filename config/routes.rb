@@ -13,8 +13,9 @@ Listr::Application.routes.draw do
     post '/user/delete' => 'devise/sessions#destroy'
   end
   post '/item/delete' => 'lists#kill_item'
+  post '/item/seen' => 'lists#seen_item'
 
-  
+
 end
 
 

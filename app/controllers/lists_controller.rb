@@ -66,6 +66,14 @@ class ListsController < ApplicationController
         redirect_to "/list/#{@list.name.gsub(' ','_')}"
     end
 
+    def seen_item
+        @list = List.find_by_name(params[:list_name].gsub('_',' '))
+        item = Item.find(params[:item_id])
+        item.seen = true
+        item.save
+        redirect_to "/list/#{@list.name.gsub(' ','_')}"
+    end
+
 
 
 end
