@@ -15,6 +15,7 @@ Listr::Application.routes.draw do
   end
   post '/item/delete' => 'lists#kill_item'
   post '/item/seen' => 'lists#seen_item'
+  post '/item/unseen' => 'lists#unsee_item'
 
 
 end

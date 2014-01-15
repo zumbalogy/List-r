@@ -1,5 +1,4 @@
 <h3>Welcome <%= current_user.email %></h3>
-<p>this is the index!!</p>
 
 <form method='post' action='/user/delete'>
     <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
@@ -23,5 +22,6 @@
                 <%= foo.name + '/seen' %>
             </a>
         </li>
+        <br/>
     <% end %>
 </ul>

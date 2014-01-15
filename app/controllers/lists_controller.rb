@@ -19,6 +19,8 @@ class ListsController < ApplicationController
         @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
     end
 
+
+
     def item
         #enter title, then take you to fill
     end
@@ -76,6 +78,14 @@ class ListsController < ApplicationController
         item.seen = true
         item.save
         redirect_to "/list/#{@list.name.gsub(' ','_')}"
+    end
+
+    def unsee_item
+        @list = List.find_by_name(params[:list_name].gsub('_',' '))
+        item = Item.find(params[:item_id])
+        item.seen = false
+        item.save
+        redirect_to "/list/#{@list.name.gsub(' ','_')}/seen" 
     end
 
 

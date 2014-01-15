@@ -1,5 +1,8 @@
 <% if current_user.id == @list.user_id %>
 
+<a href="/">Home</a>
+<a href="/list/<%= params[:list_name] %>">Main List</a>
+
 
 <form method='post' action='/user/delete'>
     <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
@@ -42,6 +45,17 @@
             </td>
             <td>
                 <%= item.notes2 %>
+            </td>
+            <td>
+                <form method='post' action='/item/unseen'>
+                    <input type='hidden' name='list_name' value="<%= params[:list_name].gsub(' ','_') %>">
+                    <input type='hidden' name='item_id' value="<%= item.id %>">
+                    <input name="authenticity_token" 
+                       type="hidden" 
+                       value="<%= form_authenticity_token %>" />
+                        
+                    <button id='submit'>Unsee</button>
+                </form>
             </td>
             <td>
                 <form method='post' action='/item/delete'>

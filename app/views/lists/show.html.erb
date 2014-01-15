@@ -1,5 +1,7 @@
 <% if current_user.id == @list.user_id %>
 
+<a href="/">Home</a>
+<a href="/list/<%= params[:list_name] %>/seen/">Seen</a>
 
 <form method='post' action='/user/delete'>
     <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
