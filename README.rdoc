@@ -133,3 +133,13 @@ include Warden::Test::Helpers
 Warden.test_mode!
 in feature spec:
 login_as(@user)
+
+
+todo: bring in bootstrap
+edit movie
+delete list
+change list name
+stylezzz
+search funtion
+testing
+sort by function

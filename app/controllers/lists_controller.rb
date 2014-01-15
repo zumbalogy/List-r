@@ -31,7 +31,6 @@ class ListsController < ApplicationController
         link_title = @title.gsub(' ','+')
         party = HTTParty.get("http://www.omdbapi.com/?i=&t=#{link_title}")
         hash = JSON.parse(party)
-        @hash = hash
         @year = hash['Year']
         @director = hash['Director']
         @genre = hash['Genre']
