@@ -10,21 +10,25 @@
 <a href="/new">New List</a>
 
 
-<ul>
+<table>
     <% current_user.lists.each do |foo| %>
-
-        <li>
+    <tr>
+        <td>
             <a href="/list/<%=foo.name.gsub(' ','_')%>">
                 <%= foo.name %>
             </a>
-        </li>
+        </td>
 
-        <li>
-            <a href="/list/<%=foo.name.gsub(' ','_')%>/seen">
-                <%= foo.name + '/seen' %>
-            </a>
-        </li>
+        <td>
+        <form method='post'>
+            <button>
+                Delete
+            </button>
+        </form>
+
+        </td>
         
         <br/>
+    </tr>
     <% end %>
-</ul>
+</table>
