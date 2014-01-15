@@ -1,51 +1,72 @@
 <form action='/list/<%= params[:list_name] %>/submit'
-             method='post' class='form'>
+             method='post' role="form" class='form-horizontal'>
 
-             <fieldset >
+             
+    <div class='form-group'>
+        <div class="col-sm-5">
+            <label class=" control-label" for="title">title</label>
+            <input type='text' class="form-control" id='title' name='title' value="<%= @title.titleize %>">
+        </div>
 
-    <p>Title</p>
-    <input type='text' name='title' value="<%= @title.titleize %>">
-    
-    <p>Director</p>
-    <input type='text' name='director' value="<%= @director %>" class='input-meduim'>
+        <div class="col-sm-5">
+            <label class=" control-label" for="director">director</label>
+            <input type='text' class="form-control" id='director' name='director' value="<%= @director %>" class='input-meduim'>
+        </div>
 
-    <p>Year</p>
-    <input type='text' name='year' value=<%= @year %>>
+        <div class="col-sm-5">
+            <label class=" control-label" for="year">year</label>
+            <input type='text' class="form-control" id='year' name='year' value=<%= @year %>>
+        </div>
 
-    <p>Genre</p>
-    <input type='text' name='genre' value="<%= @genre %>">
+        <div class="col-sm-5">
+            <label class=" control-label" for="genre">genre</label>
+            <input type='text' class="form-control" id='genre' name='genre' value="<%= @genre %>">
+        </div>
 
-    <p>Language</p>
-    <input type='text' name='language' value="<%= @language %>">
+        <div class="col-sm-5">
+            <label class=" control-label" for="language">language</label>
+            <input type='text' class="form-control" id='language' name='language' value="<%= @language %>">
+        </div>
 
-    <p>From (ie, netflix)</p>
-    <input type='text' name='from'>
+        <div class="col-sm-5">
+            <label class=" control-label" for="from">from (ie netflix)</label>
+            <input type='text' class="form-control" id='from' name='from'>
+        </div>
 
-    <p>Reccomended by</p>
-    <input type='text' name='recommended_by'>
+        <div class="col-sm-5">
+            <label class=" control-label" for="reccomended_by">Reccomended by</label>
+            <input type='text' class="form-control" name='recommended_by' id='recommended_by'>
+        </div>
 
-</fieldset>
-<fieldset>
-    <div>
-        <p>Notes</p>
-        <input type='textarea' name='notes'>
-        <p>Notes 2</p>
-        <input type='textarea' name='notes2'>
     </div>
-    </fieldset>
 
+    <div class='form-group'>
 
-    <input name='list_id' type='hidden' value='<%= @list_id %>'>
-    <input name='user_id' type='hidden' value='<%= current_user.id %>'>
+        <div class="col-sm-5">
+            <label class=" control-label" for="notes">Notes</label>
+            <input type='textarea' name='notes' id='notes' class="form-control">
+        </div>
 
-    <input name='list' type='hidden' value='<%= params[:list_name] %>'>
+        <div class="col-sm-5">
+            <label class=" control-label" for="notes2">notes 2</label>
+            <input type='textarea' name='notes2' id='notes2' class="form-control">
+        </div>
 
-     <input name="authenticity_token" 
-                   type="hidden" 
-                   value="<%= form_authenticity_token %>" />
-    
-    <button class='btn'>Submit</button>
+    </div>
 
+    <div class='form-group'>
+        <input name='list_id' type='hidden' value='<%= @list_id %>'>
+        <input name='user_id' type='hidden' value='<%= current_user.id %>'>
 
-    
+        <input name='list' type='hidden' value='<%= params[:list_name] %>'>
+
+         <input name="authenticity_token" 
+                       type="hidden" 
+                       value="<%= form_authenticity_token %>" />
+        
+        <button type='submit' class='btn'>Submit</button>
+    </div>
+
+  
 </form>
+

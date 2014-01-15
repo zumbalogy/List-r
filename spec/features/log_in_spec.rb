@@ -16,6 +16,7 @@ describe 'log in and stuff' do
             fill_in 'Email', :with => @bob.email
             fill_in 'Password', :with =>'password'
             click_button('Commit')
+            current_user.should == @bob
         end
 
     end
