@@ -7,7 +7,6 @@ class ListsController < ApplicationController
         list.name = params[:name]
         list.user_id = params[:user_id]
         list.save
-
         redirect_to '/'
     end
 
@@ -84,8 +83,7 @@ class ListsController < ApplicationController
     def delete
         list = List.find(params[:id])
         list.delete
-    
-    redirect_to '/'
+        redirect_to '/'
     end
 
 

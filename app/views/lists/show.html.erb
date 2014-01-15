@@ -6,7 +6,7 @@
 <form method='post' action='/user/delete'>
     <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
     
-    <button id='submit'>Log out</button>
+    <button id='submit' class='btn'>Log out</button>
 </form>
 
 
@@ -23,7 +23,7 @@
                     type="hidden" 
                     value="<%= form_authenticity_token %>" />
 
-        <input type='submit'>
+        <button id='submit' class='btn'>Submit</button>
     </form>
 </div>
 
@@ -31,7 +31,7 @@
 <br/>
 <br/>
 
-<table>
+<table class='table-condensed table table-bordered'>
     <% @list.items.each do |item| %>
         <% if item.seen == false %>
         <tr>
@@ -70,7 +70,7 @@
                             type="hidden" 
                             value="<%= form_authenticity_token %>" />
                         
-                    <button id='submit'>Seen</button>
+                    <button id='submit' class='btn'>Seen</button>
                 </form>
             </td>
             <td>
@@ -81,7 +81,7 @@
                             type="hidden" 
                             value="<%= form_authenticity_token %>" />
                         
-                    <button id='submit'>Delete</button>
+                    <button id='submit' class='btn'>Delete</button>
                 </form>
             </td>
         </tr>

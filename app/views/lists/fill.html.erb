@@ -1,13 +1,13 @@
-dont do anything here yet
-
 <form action='/list/<%= params[:list_name] %>/submit'
-             method='post' >
+             method='post' class='form'>
+
+             <fieldset >
 
     <p>Title</p>
     <input type='text' name='title' value="<%= @title.titleize %>">
-
+    
     <p>Director</p>
-    <input type='text' name='director' value="<%= @director %>">
+    <input type='text' name='director' value="<%= @director %>" class='input-meduim'>
 
     <p>Year</p>
     <input type='text' name='year' value=<%= @year %>>
@@ -22,14 +22,17 @@ dont do anything here yet
     <input type='text' name='from'>
 
     <p>Reccomended by</p>
-    <input type='text' name='reccommended_by'>
+    <input type='text' name='recommended_by'>
 
+</fieldset>
+<fieldset>
     <div>
         <p>Notes</p>
         <input type='textarea' name='notes'>
         <p>Notes 2</p>
         <input type='textarea' name='notes2'>
     </div>
+    </fieldset>
 
 
     <input name='list_id' type='hidden' value='<%= @list_id %>'>
@@ -40,7 +43,8 @@ dont do anything here yet
      <input name="authenticity_token" 
                    type="hidden" 
                    value="<%= form_authenticity_token %>" />
-    <input type='submit'>
+    
+    <button class='btn'>Submit</button>
 
 
     
