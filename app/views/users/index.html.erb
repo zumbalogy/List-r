@@ -11,12 +11,17 @@
 <a href="/new">New List</a>
 
 
-<ol>
+<ul>
     <% current_user.lists.each do |foo| %>
         <li>
             <a href="/list/<%=foo.name.gsub(' ','_')%>">
                 <%= foo.name %>
             </a>
         </li>
+        <li>
+            <a href="/list/<%=foo.name.gsub(' ','_')%>/seen">
+                <%= foo.name + '/seen' %>
+            </a>
+        </li>
     <% end %>
-</ol>
+</ul>

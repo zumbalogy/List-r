@@ -6,6 +6,7 @@ Listr::Application.routes.draw do
   get '/new' => 'lists#new'
   post '/new' => 'lists#create'
   get '/list/:list_name' => 'lists#show'
+  get '/list/:list_name/seen' => 'lists#seen'
   get '/list/:list_name/item' => 'lists#item'
   post '/list/:list_name/item' => 'lists#fill'
   post '/list/:list_name/submit' => 'lists#submit'
