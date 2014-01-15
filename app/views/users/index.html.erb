@@ -20,7 +20,11 @@
         </td>
 
         <td>
-        <form method='post'>
+        <form method='post' action="/delete/<%=foo.name.gsub(' ','_')%>" >
+            <input name="authenticity_token" 
+                    type="hidden" 
+                    value="<%= form_authenticity_token %>" />
+            <input name='id' type='hidden' value='<%= foo.id %>'>
             <button>
                 Delete
             </button>

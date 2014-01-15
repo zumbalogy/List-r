@@ -26,7 +26,6 @@ class ListsController < ApplicationController
     end
 
     def fill
-        
         @title = params[:title]
         link_title = @title.gsub(' ','+')
         party = HTTParty.get("http://www.omdbapi.com/?i=&t=#{link_title}")
@@ -35,14 +34,11 @@ class ListsController < ApplicationController
         @director = hash['Director']
         @genre = hash['Genre']
         @language = hash['Language']
-
-
     end
 
     def submit
         #need to catch and save the item
         @list = List.find_by_name(params[:list].gsub('_', ' '))
-
 
         item = Item.new
         item.title = params[:title]
@@ -58,8 +54,6 @@ class ListsController < ApplicationController
         item.recommended_by = params[:recommended_by]
         item.where = params[:from]
         item.save
-
-
 
         redirect_to "/list/#{@list.name.gsub(' ','_')}"
     end
@@ -85,6 +79,13 @@ class ListsController < ApplicationController
         item.seen = false
         item.save
         redirect_to "/list/#{@list.name.gsub(' ','_')}/seen" 
+    end
+
+    def delete
+        list = List.find(params[:id])
+        list.delete
+    
+    redirect_to '/'
     end
 
 
