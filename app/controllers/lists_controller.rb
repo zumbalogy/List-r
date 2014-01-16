@@ -10,7 +10,13 @@ class ListsController < ApplicationController
 
     def show
         @list2 = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
-        @array = [] 
+        @array = []
+        Item.all.each do |x|
+            if x.recommended_by == ''
+                x.recommended_by = nil
+                x.save
+            end
+        end
         ordered = Item.order(params[:order_by] || 'title')
         ordered.all.each do |x|
             if x.list_id == @list2.id
@@ -25,11 +31,6 @@ class ListsController < ApplicationController
         @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
     end
 
-
-
-    def item
-        #enter title, then take you to fill
-    end
 
     def fill
         @title = params[:title]
