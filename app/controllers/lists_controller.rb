@@ -28,11 +28,6 @@ class ListsController < ApplicationController
     end
 
 
-    def seen
-        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
-        @where = 'seen'
-    end
-
     def seen_order
         @array = []
         @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
