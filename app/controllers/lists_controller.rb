@@ -33,6 +33,18 @@ class ListsController < ApplicationController
         @where = 'seen'
     end
 
+    def seen_order
+        @array = []
+        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        ordered = Item.order(params[:order_by] || 'title')
+        ordered.all.each do |x|
+            if x.list_id == @list.id
+                @array << x
+            end
+        end
+        @where = 'seen'
+    end
+
 
     def fill
         @title = params[:title]

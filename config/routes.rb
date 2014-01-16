@@ -19,6 +19,8 @@ Listr::Application.routes.draw do
   post '/delete/:list' => 'lists#delete'
 
   get '/list/:list_name/order/:order_by' => 'lists#show'
+  get '/list/:list_name/seen/:order_by' => 'lists#seen_order'
+
 
 
 end
