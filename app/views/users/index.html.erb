@@ -6,20 +6,24 @@
     
     <button class='btn' id='submit'>Log out</button>
 </form>
-<hr>
-<button class='btn btn-primary'>
-    <a href="/new" style="color:white">New List</a>
-</button>
+
 
 <table class='table'>
+    <thead>
+        <td>
+        <button class='btn btn-primary'>
+            <a href="/new" style="color:white">New List</a>
+        </button>
+        </td>
+    </thead>
     <% current_user.lists.each do |foo| %>
     <tr>
         <td>
-            <button class='btn'>
             <a href="/list/<%=foo.name.gsub(' ','_')%>">
+            <button class='btn'>
                 <%= foo.name %>
-            </a>
             </button>
+            </a>
         </td>
 
         <td>
