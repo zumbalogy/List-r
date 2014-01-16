@@ -1,72 +1,89 @@
+<html>
+
+<head>
+    
+    <style type="text/css">
+    label {
+        color: white;
+        display: inline;
+        font-size: 1.3em;
+    }
+
+    </style>
+</head>
+<body>
 <form action='/list/<%= params[:list_name] %>/submit'
-             method='post' role="form" class='form-horizontal'>
+             method='post' role="form" class='form-horizontal container'>
 
              
-    <div class='form-group'>
-        <div class="col-sm-5">
-            <label class=" control-label" for="title">title</label>
+    <div class='form-group col-xl-4'>
+
+        <div class="col-sm-8">
+            <label class=" control-label" for="title">Title</label>
             <input type='text' class="form-control" id='title' name='title' value="<%= @title.titleize %>">
         </div>
 
-        <div class="col-sm-5">
-            <label class=" control-label" for="director">director</label>
-            <input type='text' class="form-control" id='director' name='director' value="<%= @director %>" class='input-meduim'>
+        <div class="col-sm-8">
+            <label class=" control-label" for="director">Director</label>
+            <input type='text' class="form-control" id='director' name='director' value="<%= @director %>">
         </div>
 
-        <div class="col-sm-5">
-            <label class=" control-label" for="year">year</label>
+        <div class="col-sm-8">
+            <label class=" control-label" for="year">Year</label>
             <input type='text' class="form-control" id='year' name='year' value=<%= @year %>>
         </div>
 
-        <div class="col-sm-5">
-            <label class=" control-label" for="genre">genre</label>
+        <div class="col-sm-8">
+            <label class=" control-label" for="genre">Genre</label>
             <input type='text' class="form-control" id='genre' name='genre' value="<%= @genre %>">
         </div>
 
-        <div class="col-sm-5">
-            <label class=" control-label" for="language">language</label>
+        <div class="col-sm-8">
+            <label class=" control-label" for="language">Language</label>
             <input type='text' class="form-control" id='language' name='language' value="<%= @language %>">
-        </div>
 
-        <div class="col-sm-5">
-            <label class=" control-label" for="from">from (ie netflix)</label>
+        </div>
+        <div class="col-sm-8">
+            <label class=" control-label" for="from">From (ie netflix)</label>
             <input type='text' class="form-control" id='from' name='from'>
         </div>
 
-        <div class="col-sm-5">
+        <div class="col-sm-8">
             <label class=" control-label" for="reccomended_by">Reccomended by</label>
             <input type='text' class="form-control" name='recommended_by' id='recommended_by'>
+<hr>
         </div>
 
-    </div>
 
-    <div class='form-group'>
-
-        <div class="col-sm-5">
+        <div class="col-sm-8">
             <label class=" control-label" for="notes">Notes</label>
-            <input type='textarea' name='notes' id='notes' class="form-control">
+            <input type='text' name='notes' id='notes' class="form-control">
         </div>
 
-        <div class="col-sm-5">
-            <label class=" control-label" for="notes2">notes 2</label>
-            <input type='textarea' name='notes2' id='notes2' class="form-control">
+        <div class="col-sm-8">
+            <label class=" control-label" for="notes2">Notes 2</label>
+            <input type='text' name='notes2' id='notes2' class="form-control">
         </div>
 
     </div>
 
-    <div class='form-group'>
-        <input name='list_id' type='hidden' value='<%= @list_id %>'>
-        <input name='user_id' type='hidden' value='<%= current_user.id %>'>
+    
+    <input name='list_id' type='hidden' value='<%= @list_id %>'>
+    <input name='user_id' type='hidden' value='<%= current_user.id %>'>
 
-        <input name='list' type='hidden' value='<%= params[:list_name] %>'>
+    <input name='list' type='hidden' value='<%= params[:list_name] %>'>
 
-         <input name="authenticity_token" 
-                       type="hidden" 
-                       value="<%= form_authenticity_token %>" />
-        
+     <input name="authenticity_token" 
+                   type="hidden" 
+                   value="<%= form_authenticity_token %>" />
+    
+    <div>
         <button type='submit' class='btn'>Submit</button>
     </div>
 
   
 </form>
 
+</body>
+
+</html>
