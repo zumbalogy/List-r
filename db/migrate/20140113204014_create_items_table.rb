@@ -22,7 +22,7 @@ class CreateItemsTable < ActiveRecord::Migration
             t.string :notes
             t.string :notes2
 
-            t.string :where
+            t.string :froms
             t.string :link
 
             t.string :settings, default: ""

@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20140113204014) do
     t.integer  "rating"
     t.string   "notes"
     t.string   "notes2"
-    t.string   "where"
+    t.string   "froms"           
     t.string   "link"
     t.string   "settings",       :default => ""
     t.datetime "created_at",                        :null => false

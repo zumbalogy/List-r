@@ -10,8 +10,9 @@ class ListsController < ApplicationController
 
     def show
         @list2 = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
-        @array = []
-        Item.order(params[:order_by].to_s || 'title').all.each do |x|
+        @array = [] 
+        ordered = Item.order(params[:order_by] || 'title')
+        ordered.all.each do |x|
             if x.list_id == @list2.id
                 @array << x
             end
@@ -57,7 +58,7 @@ class ListsController < ApplicationController
         item.notes = params[:notes]
         item.notes2 = params[:notes2]
         item.recommended_by = params[:recommended_by]
-        item.where = params[:from]
+        item.froms = params[:from]
         item.save
 
         redirect_to "/list/#{@list.name.gsub(' ','_')}"
