@@ -23,12 +23,14 @@ class ListsController < ApplicationController
                 @array << x
             end
         end
+        @where = 'main'
 
     end
 
 
     def seen
         @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        @where = 'seen'
     end
 
 

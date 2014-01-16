@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default  navbar-fixed-top" role="navigation" >
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">List-r</a>
+    </div>
+
+    <div class="navbar-header" style="float:right;">
+        <form method='post' action='/user/delete'>
+            <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
+            <input name="authenticity_token" 
+                            type="hidden" 
+                            value="<%= form_authenticity_token %>" />
+            <button class="navbar-brand" id='submit' style='background-color:#f8f8f8; border:0px;'>
+                Log Out
+                </button> 
+        </form>
+    </div>
+
+    <% if @where == 'seen'      %>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/list/<%= params[:list_name] %>/">Main List</a>
+        </div>
+    <% elsif @where == 'main'        %>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/list/<%= params[:list_name] %>/seen">Seen</a>
+        </div>
+
+    <% end %>
+
+
+</nav>
