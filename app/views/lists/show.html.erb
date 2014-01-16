@@ -1,13 +1,25 @@
 <% if current_user.id == @list.user_id %>
 
-<a href="/">Home</a>
-<a href="/list/<%= params[:list_name] %>/seen/">Seen</a>
+<nav class="navbar navbar-default  navbar-fixed-top" role="navigation" >
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">List-r</a>
+    </div>
 
-<form method='post' action='/user/delete'>
-    <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
-    
-    <button id='submit' class='btn'>Log out</button>
-</form>
+    <div class="navbar-header" style="float:right;">
+        <form method='post' action='/user/delete'>
+            <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
+            <button class="navbar-brand" id='submit' style='background-color:#f8f8f8; border:0px;'>
+                Log Out
+                </button> 
+        </form>
+    </div>
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/list/<%= params[:list_name] %>/seen/">Seen</a>
+    </div>
+
+
+</nav>
 
 
 <div style='display:inline;'>
@@ -31,7 +43,7 @@
 <br/>
 <br/>
 
-<table class='table-condensed table table-bordered'>
+<table class='table-condensed table table-bordered table-hover'>
     <% @list.items.each do |item| %>
         <% if item.seen == false %>
         <tr>
