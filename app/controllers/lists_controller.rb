@@ -11,8 +11,16 @@ class ListsController < ApplicationController
     end
 
     def show
-        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        @list2 = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        @array = []
+        Item.order(params[:order_by].to_s || 'title').all.each do |x|
+            if x.list_id == @list2.id
+                @array << x
+            end
+        end
+
     end
+
 
     def seen
         @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])

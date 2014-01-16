@@ -1,4 +1,4 @@
-<% if current_user.id == @list.user_id %>
+<% if current_user.id == @list2.user_id %>
 
 <nav class="navbar navbar-default  navbar-fixed-top" role="navigation" >
     <div class="navbar-header">
@@ -36,10 +36,43 @@
     </form>
 </div>
 
-<br/>
+
 
 <table class='table-condensed table table-bordered table-hover' style="background-color:#eee">
-    <% @list.items.each do |item| %>
+    <thead>
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/title'>  Title </a>
+        </th>
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/director'>  Director </a>
+        </th>
+
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/recommended_by'>  Recommended </a>
+        </th>
+
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/where'>  From </a>
+        </th>
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/year'>  Year </a>
+        </th>
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/language'>  Language </a>
+        </th>
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/genre'>  Genre </a>
+        </th>
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/notes'>  Note </a>
+        </th>
+        <th>
+            <a href='/list/<%= params[:list_name] %>/order/notes2'>  Note 2</a>
+        </th>
+
+
+    </thead>
+    <% @array.each do |item| %>
         <% if item.seen == false %>
         <tr>
             <td>

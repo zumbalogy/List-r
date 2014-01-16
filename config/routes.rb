@@ -18,6 +18,8 @@ Listr::Application.routes.draw do
   post '/item/unseen' => 'lists#unsee_item'
   post '/delete/:list' => 'lists#delete'
 
+  get '/list/:list_name/order/:order_by' => 'lists#show'
+
 
 end
 
