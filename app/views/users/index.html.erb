@@ -1,19 +1,40 @@
+<html>
+<head>
+    <style> 
+        button { 
+            border:0;
+        }
+    </style>
+</head>
+
 <body class='container'>
-<h3>Welcome <%= current_user.email %></h3>
 
-<form method='post' action='/user/delete'>
-    <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
-    
-    <button class='btn' id='submit'>Log out</button>
-</form>
+<nav class="navbar navbar-default  navbar-fixed-top" role="navigation" >
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">List-r</a>
+    </div>
 
+    <div class="navbar-header" style="float:right;">
+        <form method='post' action='/user/delete'>
+            <input type='hidden' name='_method' value="<%= destroy_user_session_path %>" >
+            <button class="navbar-brand" id='submit' style='background-color:#f8f8f8;'>
+                Log Out
+                </button>
+        </form>
+    </div>
+
+
+
+</nav>
 
 <table class='table'>
     <thead>
         <td>
+            <a href="/new" style="color:white">
         <button class='btn btn-primary'>
-            <a href="/new" style="color:white">New List</a>
+            New List
         </button>
+            </a>
         </td>
     </thead>
     <% current_user.lists.each do |foo| %>
@@ -44,3 +65,5 @@
     <% end %>
 </table>
 </body>
+
+</html>
