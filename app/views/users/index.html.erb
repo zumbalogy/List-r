@@ -27,14 +27,21 @@
 
 </nav>
 
+
+
 <table class='table'>
     <thead>
         <td>
-            <a href="/new" style="color:white">
-        <button class='btn btn-primary'>
-            New List
-        </button>
-            </a>
+            <form method='post' action='/new' style='width: 15em;'>
+                <input type='text' class='form-control' name='name' placeholder='New List'>
+            
+                <input name='user_id' type='hidden' value='<%= current_user.id %>'>
+
+                 <input name="authenticity_token" 
+                               type="hidden" 
+                               value="<%= form_authenticity_token %>" />
+            </form>
+            
         </td>
     </thead>
     <% current_user.lists.each do |foo| %>
