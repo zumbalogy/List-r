@@ -32,9 +32,9 @@ models and relations:
   OMDB
 
 extra/future features:
-     - analytics on your list
-     - importing and exporting to csv
-     - search
-     - random pick option
-     - if its on youtube or netflix
-     - edit inline
+ - analytics on your list
+ - importing and exporting to csv
+ - search
+ - random pick option
+ - if its on youtube or netflix
+ - edit inline
