@@ -8,138 +8,33 @@ http://list-r.herokuapp.com/
 This is the listr application. r for recursive i guess.
 
 
-splash page to login or sign up.
-
-sign up, and your automatically logged in. 
-
-main page now shows your lists and create new list button.
-(front end extra: give users some settings and they can change default colors)
-
-    create new list
-        title the list, check that its a movie list (which it defauts to)
-        option to import and existing spreadsheet and walk through what you -
-          want the rows/colmns to be? this might be too hard
-
-        procedding, will look like you clicked on existing list
-
-    existing list
-      show the list in spreadsheet like fashion. if i can do auto loading scrolling, major win
-        --that might be a JS thing
-        --more on the look of this later.
-
-      marking a movie as watched will put it on a sibling, identical, watched list 
-        - (which you can put back if needed)
-
-      can star movies seen, can mark ones for priority have not seen
-
-      addind list item:
-          what that looks like and stuff
-
-
-
-
-what list page looks like:
-    maybe you can edit it just by clicking it, like each row is secretly a form
-      (submitting might bring you to the top of the page though unless JS)
-    theme for the whole thing: greys
-
-
-    
-
 
 
 models and relations:
-    3 models. User, list, row/movie/item. think ill go with item
-
-    User
-      id
-      name
-      password
-      settings?
-
-    List
-      id
-      name
-      User ID
-      timestampS
-      type?
-      settings?
-      which cols to show?
+    3 models. *User* has many *list* has many *items*.
 
     Item
-      ID
-      List ID
-      Timestamps
-
       Title
       Director
-      Where can get
+      from
       Reccomended by
       year
-      language/country
+      language
       genre
-      rating
-      priority
       notes 1
       notes 2
 
-      starred
-      watched
-      rating?
-      rewatch
+      seen
 
 
 
-
-thoughts on routing?:
-    / is home
-    /list/:list_name is where your list be
-    /new make new list (post here to create and send you to list_name)
-    /list/:list_name/item fill in title, post here and sends you to next one:
-    /list/:list_name/item/submit here you will post to the next one
-    /list/:list_name/item/create and that redirects you back to /list/:list_name
-
-
-
-
-
-thoughts on API
-    kinda included in adding list item. maybe other places could be
-
+*Api
+  OMDB
 
 extra/future features:
     1 - analytics on your list
-    2 - importing and exporting to google or othewise spreadsheets
-    3 - search by multiple fields
+    2 - importing and exporting to csv
+    3 - search
     4 - random pick option
     5 - if its on youtube or netflix
-    
-
-
-
-
-
-
-add to spec helper to make capybara log in
-
-include Warden::Test::Helpers
-Warden.test_mode!
-login_as(@user)
-
-
-=====
-in spec_helper:
-include Warden::Test::Helpers
-Warden.test_mode!
-in feature spec:
-login_as(@user)
-
-
-todo: bring in bootstrap
-edit movie
-delete list
-change list name
-stylezzz
-search funtion
-testing
-sort by function
+    6 - edit inline
