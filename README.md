@@ -14,16 +14,16 @@ This is the listr application. r for recursive i guess.
 3 models. *User* has many *list* has many *items*.
 
 Item
--Title
--Director
--from
--Reccomended by
--year
--language
--genre
--notes 1
--notes 2
--seen
+- Title
+- Director
+- from
+- Reccomended by
+- year
+- language
+- genre
+- notes 1
+- notes 2
+- seen
 
 
 
