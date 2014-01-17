@@ -60,16 +60,19 @@
         </td>
 
         <td>
+        <div>
         <form method='post' action="/delete/<%=foo.name.gsub(' ','_')%>" >
             <input name="authenticity_token" 
                     type="hidden" 
                     value="<%= form_authenticity_token %>" />
             <input name='id' type='hidden' value='<%= foo.id %>'>
+            <div style='float:right;'>
             <button class=' btn'>
                 Delete
             </button>
+            </div>
         </form>
-
+        </div>
         </td>
     </tr>
     </tbody>
