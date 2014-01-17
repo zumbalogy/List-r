@@ -10,7 +10,7 @@ This is the listr application. r for recursive i guess.
 
 
 
-models and relations:
+###Relations
     3 models. *User* has many *list* has many *items*.
 
     Item
