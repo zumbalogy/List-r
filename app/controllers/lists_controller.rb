@@ -127,7 +127,7 @@ class ListsController < ApplicationController
         item = Item.find(params[:item_id])
         item.seen = false
         item.save
-        redirect_to "/list/#{@list.name.gsub(' ','_')}/seen" 
+        redirect_to "/list/#{@list.name.gsub(' ','_')}/seen/title" 
     end
 
     def delete
