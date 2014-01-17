@@ -34,9 +34,9 @@
 </div>
 
 
-<div class=' '>
+<div class=''>
 
-<table class='table-condensed table table-bordered table-hover table-responsive' width='200px' style="background-color:#eee">
+<table class='table-condensed table table-bordered table-hover table-responsive ' style="background-color:#eee;">
     <thead class=''> 
         <th>
              <a href='/list/<%= params[:list_name] %>/order/title'>  Title </a>
@@ -78,7 +78,7 @@
             </td>
             <td class='max-width: 100px;'>
                 <% if item.director != nil %>
-                    <%= item.director.split('').shift(40).join('')  %>
+                    <%= item.director.split('').shift(30).join('')  %>
                 <% end %>
             </td>
             <td class='max-width: 100px;'>
@@ -104,7 +104,9 @@
                 <%= item.genre %>
             </td>
             <td class=''>
-                <%= item.notes %>
+                <% if item.notes != nil %>
+                    <%= item.notes.split('').shift(45).join('')  %>
+                <% end %>
             </td>
             <td class=''>
                 <%= item.notes2 %>
