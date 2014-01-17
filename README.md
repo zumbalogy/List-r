@@ -28,7 +28,7 @@ Item
 
 
 ###Api
-  OMDB
+ - http://www.omdbapi.com/
 
 ###Future features:
  - analytics on your list
