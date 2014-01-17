@@ -1,3 +1,15 @@
+
+def includes? input, input2
+    if input != nil
+        input.include? input2
+    else
+        false
+    end
+end
+
+
+
+
 class ListsController < ApplicationController
 
     def create
@@ -39,6 +51,27 @@ class ListsController < ApplicationController
         end
         @where = 'seen'
     end
+
+    def search
+        @where = 'search'
+        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        search = params[:search]
+        @array = []
+        @list.items.each do |item|
+            if includes?(item.title, search) ||
+                    includes?(item.director, search) ||
+                    includes?(item.froms, search) ||
+                    includes?(item.recommended_by, search) ||
+                    includes?(item.notes, search) ||
+                    includes?(item.notes2, search) ||
+                    includes?(item.genre, search) ||
+                    includes?(item.language, search) ||
+                    item.year == search
+                @array << item
+            end
+        end
+    end
+
 
 
     def fill

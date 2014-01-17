@@ -1,40 +1,6 @@
-<% if current_user.id == @list2.user_id %>
-
-<br/>
-
-<div style='display:inline;' class='container'>
-    <form style='display:inline;' class="col-sm-3" 
-            method='post' 
-            action='/list/<%= params[:list_name].gsub(' ','_') %>/item'>
-
-        <input type='text' style='display:inline-block;' class='form-control' name='title' placeholder='new item'>
-
-        <input name='user_id' type='hidden' value='<%= current_user.id %>'>
-
-         <input name="authenticity_token" 
-                    type="hidden" 
-                    value="<%= form_authenticity_token %>" />
-    </form>
-
-    <form style='display:inline; float: right;' class="col-sm-3" 
-            method='post' 
-            action='/list/<%= params[:list_name].gsub(' ','_') %>/search'>
-
-        <input type='text' style='display:inline-block;' class='form-control' name='search' placeholder='search'>
-
-        <input name='user_id' type='hidden' value='<%= current_user.id %>'>
-
-         <input name="authenticity_token" 
-                    type="hidden" 
-                    value="<%= form_authenticity_token %>" />
-    </form>
 
 
-
-</div>
-
-
-<div class=' '>
+<br /> 
 
 <table class='table-condensed table table-bordered table-hover table-responsive' width='200px' style="background-color:#eee">
     <thead class=''> 
@@ -135,9 +101,3 @@
         <% end %>
     <% end %>
 </table>
-
-</div>
-
-
-
-<% end %>

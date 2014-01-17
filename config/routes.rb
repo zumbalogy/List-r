@@ -20,6 +20,7 @@ Listr::Application.routes.draw do
 
   get '/list/:list_name/order/:order_by' => 'lists#show'
   get '/list/:list_name/seen/:order_by' => 'lists#seen_order'
+  post '/list/:list_name/search' => 'lists#search'
 
 
 
