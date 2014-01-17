@@ -7,6 +7,10 @@ http://list-r.herokuapp.com/
 
 This is the listr application. r for recursive i guess.
 
+When enetering into your list, after giving the title, it will auto-fill with info if your title matches a movie in IMDB. This should speed up the list making proccess. You can mark movies as 'seen' and they go to another 'seen' version of the list.
+
+The list is sortable by column.
+
 
 
 
