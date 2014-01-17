@@ -1,6 +1,6 @@
 #List-r
 
-Make lists. This thing is good at making those lists be for movies you want to watch
+###Make lists. This thing is good at making those lists be for movies you want to watch
 
 http://list-r.herokuapp.com/ 
 
@@ -28,7 +28,7 @@ models and relations:
 
 
 
-*Api
+###Api
   OMDB
 
 extra/future features:
