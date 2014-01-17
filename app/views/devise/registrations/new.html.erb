@@ -1,3 +1,21 @@
+<head>
+    <style type="text/css">
+        input {
+            .form-control
+        }
+        label {
+            color: white;
+        }
+        h2 {
+            color: #33EEFF;
+        }
+    </style>
+
+</head>
+
+<br />
+
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -12,7 +30,7 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <button class='btn' id='submit'>Sign Up</button>
 <% end %>
 
 <%= render "devise/shared/links" %>
