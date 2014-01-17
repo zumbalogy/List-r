@@ -148,5 +148,8 @@ sort by function
 
 
 
-maybe some gems of mine (pry) heroku no like?
+
+make seach results sortable, and make have another search bar at top
+
+make nav to top js
 
