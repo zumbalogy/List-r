@@ -1,7 +1,7 @@
 
 def includes? input, input2
     if input != nil
-        input.include? input2
+        input.to_s.downcase.include? input2.to_s.downcase
     else
         false
     end
@@ -66,7 +66,7 @@ class ListsController < ApplicationController
                     includes?(item.notes2, search) ||
                     includes?(item.genre, search) ||
                     includes?(item.language, search) ||
-                    item.year == search
+                    includes?(item.year, search)
                 @array << item
             end
         end

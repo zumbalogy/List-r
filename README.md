@@ -37,7 +37,7 @@ Item
 ###Future features:
  - analytics on your list
  - importing and exporting to csv
- - search
+ - search results orderable
  - random pick option
  - if its on youtube or netflix
  - edit inline
