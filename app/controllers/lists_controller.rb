@@ -1,16 +1,16 @@
 
-def includes? input, input2
-    if input != nil
-        input.to_s.downcase.include? input2.to_s.downcase
-    else
-        false
-    end
-end
-
-
 
 
 class ListsController < ApplicationController
+
+    def includes? input, input2
+        if input != nil
+            input.to_s.downcase.include? input2.to_s.downcase
+        else
+            false
+        end
+    end
+
 
     def create
         list = List.new
