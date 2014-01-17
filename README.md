@@ -31,7 +31,7 @@ models and relations:
 ###Api
   OMDB
 
-extra/future features:
+###Future features:
  - analytics on your list
  - importing and exporting to csv
  - search
