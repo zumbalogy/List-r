@@ -17,12 +17,12 @@
 
 
     <% if @where == 'seen' || @where == 'search' %>
-        <%= render 'lists/top' %>
+        <%= render 'top' %>
         <div class="navbar-header">
             <a class="navbar-brand" href="/list/<%= params[:list_name] %>/">Main List</a>
         </div>
     <% elsif @where == 'main'%>
-        <%= render 'lists/top' %>
+        <%= render 'top' %>
         <div class="navbar-header">
             <a class="navbar-brand" href="/list/<%= params[:list_name] %>/seen/title">Seen</a>
         </div>
