@@ -40,4 +40,5 @@ Item
  - search results orderable
  - random pick option
  - if its on youtube or netflix
+ - magnet links
  - edit inline
