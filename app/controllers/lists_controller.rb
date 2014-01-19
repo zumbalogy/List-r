@@ -1,15 +1,42 @@
-
-
-
 class ListsController < ApplicationController
 
-    def includes? input, input2
-        if input != nil
-            input.to_s.downcase.include? input2.to_s.downcase
+    def includes? string, word
+        if string != nil
+            string.to_s.downcase.include? word.to_s.downcase
         else
             false
         end
     end
+
+    def searching array, search
+        result = []
+        array.each do |item|
+            score = 0
+            search.split.each do |word|
+                score += 1 if includes?(item.title, word)  ||
+                            includes?(item.director, word)  ||
+                            includes?(item.froms, word)  ||
+                            includes?(item.recommended_by, word)  ||
+                            includes?(item.notes, word)  ||
+                            includes?(item.notes2, word)  ||
+                            includes?(item.genre, word)  ||
+                            includes?(item.language, word)  ||
+                            includes?(item.year, word)
+            end
+            if score == search.split.length
+                result << item
+            end
+        end
+        result
+    end
+
+    def search
+        @where = 'search'
+        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        search = params[:search]
+        @array = searching(@list.items, search)
+    end
+
 
 
     def create
@@ -52,25 +79,6 @@ class ListsController < ApplicationController
         @where = 'seen'
     end
 
-    def search
-        @where = 'search'
-        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
-        search = params[:search]
-        @array = []
-        @list.items.each do |item|
-            if includes?(item.title, search) ||
-                    includes?(item.director, search) ||
-                    includes?(item.froms, search) ||
-                    includes?(item.recommended_by, search) ||
-                    includes?(item.notes, search) ||
-                    includes?(item.notes2, search) ||
-                    includes?(item.genre, search) ||
-                    includes?(item.language, search) ||
-                    includes?(item.year, search)
-                @array << item
-            end
-        end
-    end
 
 
 
