@@ -16,7 +16,7 @@
     </div>
 
 
-    <% if @where == 'seen' || @where == 'search' %>
+    <% if @where == 'seen' || @where == 'search' || @where == 'csv' %>
         <%= render 'top' %>
         <div class="navbar-header">
             <a class="navbar-brand" href="/list/<%= params[:list_name] %>/">Main List</a>
@@ -26,6 +26,10 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/list/<%= params[:list_name] %>/seen/title">Seen</a>
         </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/list/<%= params[:list_name] %>/csv">Export</a>
+        </div>
+
 
     <% end %>
 

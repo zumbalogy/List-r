@@ -1,0 +1,20 @@
+<p>
+    
+
+
+    <% @items.each do |item|  %>
+        <%= item.title.gsub(',','/') %> ,
+        <%= item.director.gsub(',','/') %> ,
+        <%= item.recommended_by.gsub(',','/') %> ,
+        <%= item.froms.gsub(',','/') %> ,
+        <%= item.year %> ,
+        <%= item.language.gsub(',','/') %> ,
+        <%= item.genre.gsub(',','/') %> ,
+        <%= item.notes.gsub(',','/') %> ,
+        <%= item.notes2.gsub(',','/') %>  <br/>
+
+    <% end %>
+
+
+
+</p>

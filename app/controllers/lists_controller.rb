@@ -1,3 +1,12 @@
+class NilClass
+    def gsub input, input2
+        nil
+    end
+end
+
+
+
+
 class ListsController < ApplicationController
 
     def includes? string, word
@@ -143,6 +152,13 @@ class ListsController < ApplicationController
         list.delete
         redirect_to '/'
     end
+
+    def csv
+        @items = List.find_by_name(params[:list_name].gsub('_',' ')).items
+        @where = 'csv'
+
+    end
+
 
 
 
