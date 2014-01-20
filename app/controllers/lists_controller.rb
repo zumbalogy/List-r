@@ -51,7 +51,10 @@ class ListsController < ApplicationController
 
     def show
         @where = ('search' if params[:search]) || 'main'
-        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) ||
+                                        List.find_by_name(params[:list]) ||
+                                        List.find_by_name(params[:list_name]) 
+
         @list.items.each do |x|
             if x.recommended_by == ''
                 x.recommended_by = nil

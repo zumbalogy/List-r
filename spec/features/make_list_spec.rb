@@ -29,6 +29,17 @@ describe 'make list' do
             page.should have_content 'spec_list'
         end
 
+        it 'can go to a list' do
+            fill_in('name', :with => 'spec_list')
+            element = find_by_id('new_list')
+            Capybara::RackTest::Form.new(page.driver, element.native).submit :name => nil
+
+            click_link('spec_list')
+            page.should have_content 'Seen'
+
+        end
+
+
 
 
 
