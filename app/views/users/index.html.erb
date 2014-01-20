@@ -21,11 +21,7 @@
             <form method='post' action='/new' style='width: 15em;'>
                 <input type='text' class='form-control' name='name' placeholder='New List'>
             
-                <input name='user_id' type='hidden' value='<%= current_user.id %>'>
-
-                 <input name="authenticity_token" 
-                               type="hidden" 
-                               value="<%= form_authenticity_token %>" />
+                <%= render 'lists/auth' %>
             </form>
             
         </td>
@@ -44,9 +40,7 @@
         <td>
         <div>
             <form method='post' action="/delete/<%=foo.name.gsub(' ','_')%>" >
-                <input name="authenticity_token" 
-                        type="hidden" 
-                        value="<%= form_authenticity_token %>" />
+                <%= render 'lists/auth' %>
                 <input name='id' type='hidden' value='<%= foo.id %>'>
                 <div style='float:right;'>
                     <button class=' btn'>
@@ -62,6 +56,7 @@
 </table>
 
 </div>
+
 </body>
 
 </html>

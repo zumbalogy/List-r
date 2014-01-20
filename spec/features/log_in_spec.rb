@@ -13,10 +13,12 @@ describe 'log in and stuff' do
 
         it 'can sign up' do
             visit user_session_path
-            fill_in 'Email', :with => @bob.email
-            fill_in 'Password', :with =>'password'
-            click_button('Commit')
-            current_user.should == @bob
+            within "//div[@class = 'login']" do
+                fill_in 'Email', :with => @bob.email
+                fill_in 'Password', :with =>'password'
+                click_button('submit')
+            end
+            page.should have_xpath('//table/thead')
         end
 
     end

@@ -90,7 +90,6 @@ class ListsController < ApplicationController
     end
 
     def submit
-        #need to catch and save the item
         @list = List.find_by_name(params[:list].gsub('_', ' '))
 
         item = Item.new
@@ -143,10 +142,7 @@ class ListsController < ApplicationController
     def csv
         @items = List.find_by_name(params[:list_name].gsub('_',' ')).items
         @where = 'csv'
-
     end
-
-
 
 
 end
