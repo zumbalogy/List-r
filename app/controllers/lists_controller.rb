@@ -4,11 +4,11 @@ class NilClass
     end
 end
 
-require_relative  '../../lib/assets/list_search'
+# require_relative  '../../lib/assets/list_search'
 
 
 class ListsController < ApplicationController
-    include SearchList
+#    include SearchList
 
     def includes? string, word
         if string != nil
