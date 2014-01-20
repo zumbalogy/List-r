@@ -49,6 +49,7 @@ class ListsController < ApplicationController
     end
 
     def show
+        @where = ('search' if params[:search]) || 'main'
         @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
         @list.items.each do |x|
             if x.recommended_by == ''
@@ -56,13 +57,10 @@ class ListsController < ApplicationController
                 x.save
             end
         end
-
-
-        @array =  @list.items
-        @array = @array.order(params[:order_by] || 'title')
-        @array = searching(@array, params[:search] || '')
-        @where = 'main'
-
+ 
+        @search = params[:search] || ''
+        @array = @list.items.order(params[:order_by] || 'title')
+        @array = searching(@array, @search)
     end
 
 
@@ -77,8 +75,6 @@ class ListsController < ApplicationController
         end
         @where = 'seen'
     end
-
-
 
 
     def fill
