@@ -1,4 +1,4 @@
-module Search
+module SearchList
 
     def includes? string, word
         if string != nil
