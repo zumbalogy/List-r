@@ -1,4 +1,4 @@
-<% if current_user.id == @list2.user_id %>
+<% if current_user.id == @list.user_id %>
 
 <br/>
 
@@ -18,7 +18,7 @@
 
     <form style='display:inline; float: right;' class="col-sm-3" 
             method='post' 
-            action='/list/<%= params[:list_name].gsub(' ','_') %>/search'>
+            action='/list/<%= params[:list_name].gsub(' ','_') %>/'>
 
         <input type='text' style='display:inline-block;' class='form-control' name='search' placeholder='search'>
 

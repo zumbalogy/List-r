@@ -39,14 +39,6 @@ class ListsController < ApplicationController
         result
     end
 
-    def search
-        @where = 'search'
-        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
-        search = params[:search]
-        @array = searching(@list.items, search)
-    end
-
-
 
     def create
         list = List.new
@@ -57,20 +49,18 @@ class ListsController < ApplicationController
     end
 
     def show
-        @list2 = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
-        @array = []
-        Item.all.each do |x|
+        @list = List.find_by_name(params[:list_name].gsub('_', ' ')) || List.find_by_name(params[:list])
+        @list.items.each do |x|
             if x.recommended_by == ''
                 x.recommended_by = nil
                 x.save
             end
         end
-        ordered = Item.order(params[:order_by] || 'title')
-        ordered.all.each do |x|
-            if x.list_id == @list2.id
-                @array << x
-            end
-        end
+
+
+        @array =  @list.items
+        @array = @array.order(params[:order_by] || 'title')
+        @array = searching(@array, params[:search] || '')
         @where = 'main'
 
     end
