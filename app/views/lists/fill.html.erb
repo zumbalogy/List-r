@@ -69,13 +69,10 @@
 
     
     <input name='list_id' type='hidden' value='<%= @list_id %>'>
-    <input name='user_id' type='hidden' value='<%= current_user.id %>'>
 
     <input name='list' type='hidden' value='<%= params[:list_name] %>'>
 
-     <input name="authenticity_token" 
-                   type="hidden" 
-                   value="<%= form_authenticity_token %>" />
+    <%= render 'lists/auth' %>
     
     <div>
         <button type='submit' class='btn'>Submit</button>

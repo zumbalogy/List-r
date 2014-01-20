@@ -9,11 +9,7 @@
 
         <input type='text' style='display:inline-block;' class='form-control' name='title' placeholder='new item'>
 
-        <input name='user_id' type='hidden' value='<%= current_user.id %>'>
-
-         <input name="authenticity_token" 
-                    type="hidden" 
-                    value="<%= form_authenticity_token %>" />
+        <%= render 'auth' %>
     </form>
 
     <form style='display:inline; float: right;' class="col-sm-3" 
@@ -22,11 +18,9 @@
 
         <input type='text' style='display:inline-block;' class='form-control' name='search' placeholder='search'>
 
-        <input name='user_id' type='hidden' value='<%= current_user.id %>'>
+        
 
-         <input name="authenticity_token" 
-                    type="hidden" 
-                    value="<%= form_authenticity_token %>" />
+         <%= render 'auth' %>
     </form>
 
 
@@ -98,7 +92,7 @@
             </td>
             <td class='max-width: 100px;'>
             <% if item.language != nil %>
-                    <%= item.language.split('').shift(15).join('')  %>
+                    <%= item.language.split('').shift(17).join('')  %>
                 <% end %>
             </td>
             <td class='max-width: 100px;'>
