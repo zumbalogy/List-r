@@ -37,6 +37,18 @@ describe 'make list' do
             click_link('spec_list')
             page.should have_content 'Seen'
 
+            fill_in('title', :with => 'primer')
+            element = find_by_id('title')
+            p element
+            Capybara::RackTest::Form.new(page.driver, element.native).submit :name => nil
+#           page.should have_no_content 'Seen'
+
+
+            # page.should have_content 'Primer'
+            # click_on 'submit'
+            # page.should have_content 'Primer'
+
+
         end
 
 
